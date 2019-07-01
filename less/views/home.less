@@ -1,0 +1,27 @@
+// main: ../page.less
+
+.img-wrapper{
+    background-image: url('../../img/banner.jpg');
+    height: ~"calc(100vh - 56px)";
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.banner-content{
+    flex-direction: column;
+    h1{
+        font-size: 60px;
+    }
+
+    input{
+        border:1px solid #ccc;
+        box-shadow: none;
+        width: 80%;
+        height: 45px;
+        border-radius: 40px;
+        &:focus{
+            border-color: black;
+            box-shadow: none;
+        }
+    }
+}

@@ -1,0 +1,74 @@
+// main: ../page.less
+
+@offset: 187;
+@duration: 1.4s;
+@blue: #f05b30;
+#pre-loader {
+  background-color: white;
+  z-index: 9999;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  svg {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    margin: auto;
+  }
+  .spinner {
+    animation: rotator @duration linear infinite;
+  }
+
+  @keyframes rotator {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(270deg);
+    }
+  }
+
+  .path {
+    stroke-dasharray: @offset;
+    stroke-dashoffset: 0;
+    transform-origin: center;
+    animation: dash @duration ease-in-out infinite,
+      colors (@duration*4) ease-in-out infinite;
+  }
+
+  @keyframes colors {
+    0% {
+      stroke: @blue;
+    }
+    100% {
+      stroke: @blue;
+    }
+  }
+  @keyframes dash {
+    0% {
+      stroke-dashoffset: @offset;
+    }
+    50% {
+      stroke-dashoffset: @offset / 4;
+      transform: rotate(135deg);
+    }
+    100% {
+      stroke-dashoffset: @offset;
+      transform: rotate(450deg);
+    }
+  }
+}
+
+.navbar-brand {
+  a{
+    color: #424242;
+  }
+}
+
+.navbar{
+  background-color: white;
+}
