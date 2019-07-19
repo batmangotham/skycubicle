@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <meta name="description" content="">
     <meta name="Keywords" content="">
-    <title>Skycubicle</title>
+    <title>SkyCubicle | Build Your Team</title>
   <!-- Firefox, Chrome, Safari, IE 11+ and Opera. 196x196 pixels in size. -->
-  <link rel="icon" href="img/ice.png">
+  <!-- <link rel="icon" href="img/ice.png"> -->
     <!-- bower:css -->
     <!-- <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css"/> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -18,32 +18,74 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-light fixed-top">
+ <header>
+  <nav class="navbar navbar-light fixed-top">
+    <div class="container">
         <a class="navbar-brand" href="#">
-          <img src="./img/ice (1).svg" width="30" height="30" class="d-inline-block align-top" alt="">
-        <span>SkyCubicle</span>
+            <img src="./img/sky.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+          <span>SkyCubicle</span>
         </a>
-      </nav>
-      <div class="container-fluid mt-5">
+    </div>
+    </nav>
+ </header>
+      <div class="container mt-5">
         <div class="row">
-          <div class="col-4 d-flex align-items-start justify-content-center banner-content">
+          <div class="col-sm-4 d-flex align-items-start justify-content-center banner-content">
             <small class="mb-0">#1 virtual space for startups</small>
-            <h1>Start Building your team</h1>
-            <input type="text" class="form-control" placeholder="Enter your email address"> 
+            <h1 class="mt-2 mb-2">Start Building your team</h1>
+            <p>Are you curious about the job that your going to do in future?
+                Find your teammates, and mentors  with same passion and make our world better with your contributions.  
+                
+                SkyCubicle will help you to find your Teammates and Mentors.
+                Also we will help you to start your virtual startup for free.
+                 
+                 To Build you Virtual startup in our Virtual silicon valley get our early access.</p>
+            <!-- <input type="text" class="form-control mt-2" placeholder="Enter your email address">  -->
+            <button data-toggle="modal" data-target="#subscribe" type="button" class="btn btn-primary">Get early access</button>
           </div>
-          <div class="col-8">
+          <div class="col-sm-8 d-none d-sm-block">
             <div class="img-wrapper"></div>
           </div>
         </div>
       </div>
+
+
+      <!-- Modal -->
+<div class="modal fade" id="subscribe" tabindex="-1" role="dialog" aria-labelledby="subscribe" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-body mt-3 mb-3">
+        <div class="row">
+          <div class="col-12">
+          <div class="img-block d-flex text-center">
+            <img src="https://image.flaticon.com/icons/svg/1875/1875626.svg" alt="" class="img-fluid">
+            <h5 class="text-center mt-3 mb-3">Tell us what you do</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur arcu diam, egestas in vestibulum ut, porta id magna. Aenean imperdiet egestas elit ut tincidunt.</p>
+          </div>
+          </div>
+       <div class="col-6 mb-2">
+         <button class="ans-block">I am a student</p>
+       </div>
+       <div class="col-6 mb-2">
+        <button class="ans-block">I am working</p>
+      </div>
+        </div>
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div>
+  </div>
+</div>
     <!-- bower:js -->
     <!-- <script src="./node_modules/jquery/dist/jquery.min.js"></script>
     <script src="./node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="../node_modules/imagesloaded/imagesloaded.pkgd.min.js"></script> -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <!-- endbower -->
     </body>
     <script src="js/main.js"></script>
