@@ -1,5 +1,17 @@
 // main: ../page.less
 
+.blue-btn{
+    background-color: #3b6bea;
+    color: white;
+    border: 2px solid #3b6bea;
+    font-weight: 500;
+    border-radius: 28px;
+    font-size: 15px;
+    &:hover, &:focus{
+        box-shadow: 0 0 5px lighten(#3b6bea,10%);
+    }
+}
+
 .img-wrapper{
     background-image: url('../../img/banner.png');
     height: ~"calc(100vh - 56px)";
@@ -36,15 +48,7 @@
         }
     }
     button{
-    background-color: #3b6bea;
-    color: white;
-    border: 2px solid #3b6bea;
-    font-weight: 500;
-    border-radius: 28px;
-    font-size: 15px;
-    &:hover, &:focus{
-        box-shadow: 0 0 5px lighten(#3b6bea,10%);
-    }
+        .blue-btn;
     }
 }
 
@@ -71,13 +75,18 @@
                 background-color: #3b6bea;
                 color: white;
             }
+            &.active{
+                background-color: #3b6bea;
+                color: white;
+            }
+
         }
         .img-block{
             flex-direction: column;
             align-items: center;
             justify-content: center;
             img{
-                height: 70px;
+                height: 50px;
             }
             p{
                 font-size: 13px;
@@ -86,4 +95,21 @@
             }
         }
     }
+    #sub-form{
+        .form-control{
+            border: none;
+            border-bottom: 1px solid #ccc;
+            box-shadow: none;
+            border-radius: 0;
+            padding-left: 0;
+            border-width: 2px;
+            &:focus{
+                border-color: #3b6bea;
+            }
+        }
+        button{
+        .blue-btn;
+        }
+    }
 }
+
