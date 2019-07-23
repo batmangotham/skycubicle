@@ -3,9 +3,9 @@ const account = require("./mg.json");
 const ejs = require("ejs");
 const path = require("path");
 let transporter = nodemailer.createTransport({
-  host: "smtp.mailgun.org",
-  port: 587,
-  secure: false, // true for 465, false for other ports
+  service:"Gmail",
+  // port: 587,
+  // secure: false, // true for 465, false for other ports
   auth: {
     user: account.user,
     pass: account.pass
@@ -34,11 +34,10 @@ async function mailContact(contact) {
 
 function sendMail(mailOptions) {
   transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
+    if (error) 
        console.log(error);
-    } else {
+     else 
         console.log("Message sent: %s", info.messageId);
-    }
   });
 }
 
