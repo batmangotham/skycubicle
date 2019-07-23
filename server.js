@@ -1,11 +1,16 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require("path");
 // const http = require('http');
 // const contact = require("./contact")
-
+// Route imports
+const contact = require("./app/routes/contact");
 const app = express();
-
+// template engine
+app.set('views', './app/views')
+// app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'ejs')
 // MW
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -13,8 +18,22 @@ app.use(bodyParser.urlencoded({
     parameterLimit: 50000
 }));
 
+
+// local
+mongoose.connect('mongodb://localhost/skycubicle', {
+  useNewUrlParser: true
+}).then(() => {
+  console.log("Connected to MongoDB...")
+}).catch(err => {
+  console.error("Could not connect to MongoDB")
+  console.log(err);
+});
+
+
+
+
 // routes
-// app.use("/api/contact", contact);
+app.use("/api/contact", contact);
 
 
 
