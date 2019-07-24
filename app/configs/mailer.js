@@ -20,7 +20,7 @@ async function mailContact(contact) {
         // console.log(file);
       let mailOptions = {
         from: '"Skycubicle Team" <support@skycubicle.com>', // sender address
-        to: "amalkhd@gmail.com, meshal.chalil@gmail.com", // list of receivers
+        to: contact.email, // list of receivers
         subject: `Skycubicle Early Access`, // Subject line
         html: file
       };

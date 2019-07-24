@@ -57,6 +57,7 @@ $(document).ready(function() {
         }
       });
       const submit = ` <div class="col text-right mt-3">
+      <button id="#cancel" class="btn btn-light pb-1 pt-1" type="button">Cancel</button>
       <button id="submit" class="btn btn-primary pb-1 pt-1" type="submit">Submit</button>
   </div>`;
       forms = `<div class="row">${[...forms, ...submit].join("")}</div>`;
@@ -87,6 +88,12 @@ $(document).ready(function() {
     }
   })
 
+  $("body").on("click", "#cancel", function(ev) {
+    ev.preventDefault();
+    closeModal();
+  });
+
+
   $("body").on("click", "#submit", function(ev) {
     ev.preventDefault();
     const form = document.forms[0];
@@ -104,9 +111,15 @@ $(document).ready(function() {
         type: 'POST',
         url: '/api/contact',
         data: JSON.stringify(data), 
-        success: function(res, status) { console.log(res, status); },
+        success: function(res, status) {  
+          // console.log(res); 
+          showPop(true);
+          closeModal();
+
+        },
         error:function(err){
-          console.log(err); 
+          // console.log(err); 
+          showPop(false)
         },
         contentType: "application/json",
         dataType: 'json'
@@ -122,5 +135,34 @@ $(document).ready(function() {
       formData[item.name] = item.value;
     }
     return formData;
+  }
+
+
+  function showPop(status){
+    const pop = $('.pop');
+    if(status){
+      pop.find('.content').text("Submitted succcessfully");
+      pop.show().addClass('success show');
+      setTimeout(() => { 
+        pop.removeClass('show success');},
+        3000)
+        setTimeout(() => { 
+          pop.hide().find('.content').text("")},
+          4000)
+    }else{
+      pop.find('.content').text("Something went wrong!! Try again.");
+      pop.show().addClass('err show');
+      setTimeout(() => { 
+        pop.removeClass('show err');},
+        3000)
+        setTimeout(() => { 
+          pop.hide().find('.content').text("")},
+          4000)
+    }
+  }
+
+  function closeModal(){
+    $("#subscribe").hide();
+    removeForm();
   }
 });
