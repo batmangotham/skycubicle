@@ -1,4 +1,12 @@
 $(document).ready(function() {
+$('.container').hide();
+  $('body').imagesLoaded().done(()=>{
+    $(".loader").fadeOut();
+  $('.container').slideToggle('slow')
+  })
+
+
+
   let type = "";
   const student = [
     { name: "fullname", required: true, display: "Full name", type: "text" },
