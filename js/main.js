@@ -57,7 +57,7 @@ $(document).ready(function() {
         }
       });
       const submit = ` <div class="col text-right mt-3">
-      <button id="#cancel" class="btn btn-light pb-1 pt-1" type="button">Cancel</button>
+      <button id="cancel" class="btn btn-light pb-1 pt-1" type="button">Cancel</button>
       <button id="submit" class="btn btn-primary pb-1 pt-1" type="submit">Submit</button>
   </div>`;
       forms = `<div class="row">${[...forms, ...submit].join("")}</div>`;
@@ -162,7 +162,10 @@ $(document).ready(function() {
   }
 
   function closeModal(){
-    $("#subscribe").hide();
-    removeForm();
+    const modal = $("#subscribe");
+    modal.modal('hide');
+    modal.on('hidden.bs.modal', function (e) {
+      removeForm();
+    })
   }
 });
