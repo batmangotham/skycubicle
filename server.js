@@ -2,6 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require("path");
+const cors = require("cors");
+
 // const http = require('http');
 // const contact = require("./contact")
 // Route imports
@@ -11,6 +13,8 @@ const app = express();
 app.set('views', './app/views')
 // app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs')
+
+app.use(cors());
 // MW
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
